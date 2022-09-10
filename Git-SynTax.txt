@@ -1,0 +1,164 @@
+*Notice:
+-keep each commit focused on a single thing(Atomic Commits)
+-when you switch branches, sometime if you have unstaged changes
+they will come with you, other times, if they're in conflict, git will yell at you
+-Ignoring files(.gitignore )
+-github have GIST
+-never rebase commits that have been shared with other
+-tags are not included by default when push code, have to push tags to remote repo manually
+*about commit
+-blobs is content
+-tree contain blobs or tree
+-commit contain tree, parent commit
+*Terminal command(git bash):
+-ls || ls folder_name/ets...
+-start . || start folder_name/etc...
+-pwd(print working directory, give exact location where you are)
+-cd directory
+-cd ..(back up)
+-touch file_name(make new file)
+-mkdir folder_name(make new folder)
+-rm file_name(delete permanent)
+-rm -rf folder_name
+*Syntax(15):
+-git config --global 
+   core.editor "code --wait"
+   alias.s status(git s = git status)
+-git status
+-git init
+-git add
+-git commit
+  -a(add stages, new files are not affected)
+  -m ""
+  --amend(redo the previous commit, include files to commit or changes message)
+-git log 
+  --oneline
+-git branch(list the current branches)
+  -m(move/rename current branch)
+  -d(D: delete a another branch)
+  -v(list branch, last commit, comment)
+  -r(show remote tracking branch)
+   branch_name(create a branch)
+-git switch
+  -c(create) 
+   branch_name
+  -(dash and it takes back to where we left offf)
+-git checkout
+  -b(create a branch and switch to it)
+   branch_name
+   commit_hash(detached HEAD)
+   HEAD~1(any number to checkout a commit, detached HEAD)
+   HEAD file_name(undo/discard staged, unstaged back to HEAD)
+   tag_name
+-git merge 
+   branch_name(merge current branch to branch_name)
+   --no-ff(no fastforward)
+-git diff(show all that are unstaged for the next commit)
+  --staged(show all that are staged for the next commit)
+   HEAD(show all changes, staged and unstaged since head)
+   file_name(narrow down to a particular file)
+   branch1 branch2(compare two branchs)
+   commit1 commit2(compare two commits)
+   tag_name1 tag_name2
+-git stash
+   pop(removes the most recent thing from the stash after apply)
+   apply(apply changes across multiple branches or apply and still have stash) stash@{number}
+   drop stash@{number}
+   clear(remove all stash)
+   list(view other stash)
+-git restore 
+   file_name(= git checkout HEAD file_name)
+   --source HEAD~1/commit_hash file_name(restore the contents of files back to commits)
+   --staged file_name(unstaged a file_name, move a staged file back to unstaged)
+-git reset
+   commit_hash/HEAD~1(remove commit entirely and moves the branch pointer backward--plain)
+   --hard commit_hash/HEAD~1(remove commit entirely or restore if it is removed and moves the branch pointer backward--hard)
+-git revert
+   commit_hash/HEAD~1(remove commits by making a new commit)
+-git clone
+   url(fetch and bring down a repo to local machine)
+-git remote 
+   -v
+   add remote_name/origin url
+   rename old_name new_name
+   remove remote_name
+-git push 
+   remote_name branch_name
+   remote_name --tags(push all tag name to remote repo)
+-git fetch(download the lastest infomation from a remote repository, but not be integrated into working files)
+   remote_name
+   branch_name
+-git pull(fetch + merge)
+   remote_name(automatic default if it is origin remote)
+   branch_name(automatic default if current branch = pull_branch)
+-git rebase
+   branch_namne(rebase onto branch_name, never rebase commits that have been shared with other)
+   -i HEAD~1(edit multi commits, reword, fixup, drop,...)
+-git tag(view tags)
+   -l "*tag_name*"(find tag name,* = anything)
+   tag_name(create lightweight tag name on whatever the HEAD is referencing at that moment)
+   -a tag_name(create annotated tag name)
+   tag_name hash(tag name old commit)
+   tag_name hash -f(move exist tag name to old commit)
+   -d tag_name(delete tag name)
+-git show
+   tag_name(show info about annotated tag name)
+-git hash-object file_name -w(store contents of file_name in objects file and return hash_id)
+-echo "hello" | git hash-object --stdin -w(store "hello" in objects file and return hash_id)
+-git cat-file -p 
+    hash_id(use hash_id to print out value)
+    > file_name(print out in file_name)
+    master^{tree}(view tree object that is pointed to by the tip of master branch)
+-git reflog show 
+    HEAD(show the log of HEAD)
+    branch_name
+    HEAD@{1}
+    HEAD@{2.day.ago}
+
+
+*****
+-pull request conflict
+-git reflog show 
+    HEAD(show the log of HEAD)
+    branch_name
+    HEAD@{1}
+    HEAD@{2.day.ago}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
